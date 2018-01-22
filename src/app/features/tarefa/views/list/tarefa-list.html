@@ -1,0 +1,30 @@
+<p-confirmDialog></p-confirmDialog>
+
+<p-panel>
+    <p-header>
+        {{"ecossistema.reference_app.tarefa_list_view_label" | translate}}
+    </p-header>
+
+    <div class="ui-g">
+        <div class="ui-g-12">
+            <button id="add" type="button" pButton label="{{'add' | translate}}" routerLink="../form" *ngIf="permissions.incluir"></button>
+            <button id="add" type="button" class="ui-button-secondary" pButton label="{{'edit' | translate}}" [disabled]="!selected || selected.length !== 1" (click)="onEditClick()"></button>
+            <button id="delete" type="button" class="ui-button-secondary" pButton label="{{'delete' | translate}}" (click)="onDeleteClick()" [disabled]="!selected || !selected.length" *ngIf="permissions.excluir"></button>
+        </div>
+    </div>
+
+    <div class="ui-g">
+        <div class="ui-g-12">
+            <p-dataTable [value]="gridData" dataKey="id" [lazy]="true" selectionMode="multiple" scrollable="true" resizableColumns="true" sortMode="multiple" reorderableColumns="true" [rows]="gridRows" [paginator]="true" [totalRecords]="totalRecords" [(selection)]="selected"
+                (onLazyLoad)="onGridChange($event)">
+                <p-column [style]="{'width':'38px'}" selectionMode="multiple"></p-column>
+
+                <p-column field="id" header="{{'ecossistema.reference_app.tarefa_id_label' | translate}}" [sortable]="true" [style]="{'width':'200px'}"></p-column>
+                <p-column field="titulo" header="{{'ecossistema.reference_app.tarefa_titulo_label' | translate}}" [sortable]="true" [style]="{'width':'200px'}"></p-column>
+                <p-column field="data" header="{{'ecossistema.reference_app.tarefa_data_label' | translate}}" [sortable]="true" [style]="{'width':'200px'}"></p-column>
+                <p-column field="description" header="{{'ecossistema.reference_app.tarefa_description_label' | translate}}" [sortable]="true" [style]="{'width':'200px'}"></p-column>
+            </p-dataTable>
+        </div>
+    </div>
+
+</p-panel>

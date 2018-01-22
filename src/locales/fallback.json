@@ -1,0 +1,20 @@
+{
+	"add": "Adicionar",
+	"cancel": "Cancelar",
+	"delete": "Remover",
+	"delete_confirmation_message": "Tarefa removida",
+	"delete_confirmation_title": "Remover tarefa",
+	"deleted_message_content": "Tarefa removida",
+	"deleted_message_title": "Remover tarefa",
+	"ecossistema.reference_app.tarefa_data_label": "Data",
+	"ecossistema.reference_app.tarefa_description_label": "Descrição",
+	"ecossistema.reference_app.tarefa_form_view_label": "Tarefa",
+	"ecossistema.reference_app.tarefa_id_label": "ID",
+	"ecossistema.reference_app.tarefa_list_view_label": "Tarefas",
+	"ecossistema.reference_app.tarefa_titulo_label": "Titulo",
+	"edit": "Editar Tarefa",
+	"not_authorized": "Não Autorizado",
+	"save": "Gravar",
+	"saved_message_content": "Tarefa Gravada com sucesso",
+	"saved_message_title": "Gravar Tarefa"
+}

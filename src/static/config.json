@@ -1,0 +1,15 @@
+{
+    "menu": {
+            "children": [
+                {
+                    "label": "Aplicativo de referência",
+                    "labelI18n": "platform.backend.ecossistema_reference_app",
+                    "path": {
+                        "category": "iframe",
+                        "menuId": "{reference-app-frontend.url}/reference_app/#/"
+                    }
+                }
+            ]
+        
+    }
+}

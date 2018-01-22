@@ -1,0 +1,30 @@
+2017-12-05T17:17:26.982Z - WARNING: No previously generated project detected.
+2017-12-05T17:17:27.180Z - DEBUG: Loading possible input files at "C:\Users\gian.pasqualini\ecossistema\workspace\ecossistema-reference-app-frontend"
+2017-12-05T17:17:35.578Z - VERBOSE: Loading input file...
+2017-12-05T17:17:35.580Z - VERBOSE: Parsing input file...
+2017-12-05T17:17:35.583Z - VERBOSE: Error: Invalid input file
+    at t.value (C:\Users\gian.pasqualini\AppData\Roaming\npm\node_modules\@seniorsistemas\frontend-generator\bin\main.js:2:28111)
+    at t.<anonymous> (C:\Users\gian.pasqualini\AppData\Roaming\npm\node_modules\@seniorsistemas\frontend-generator\bin\main.js:2:27307)
+    at tryCatch (C:\Users\gian.pasqualini\AppData\Roaming\npm\node_modules\@seniorsistemas\frontend-generator\node_modules\regenerator-runtime\runtime.js:65:40)
+    at Generator.invoke [as _invoke] (C:\Users\gian.pasqualini\AppData\Roaming\npm\node_modules\@seniorsistemas\frontend-generator\node_modules\regenerator-runtime\runtime.js:303:22)
+    at Generator.prototype.(anonymous function) [as next] (C:\Users\gian.pasqualini\AppData\Roaming\npm\node_modules\@seniorsistemas\frontend-generator\node_modules\regenerator-runtime\runtime.js:117:21)
+    at n (C:\Users\gian.pasqualini\AppData\Roaming\npm\node_modules\@seniorsistemas\frontend-generator\bin\main.js:2:25579)
+    at C:\Users\gian.pasqualini\AppData\Roaming\npm\node_modules\@seniorsistemas\frontend-generator\bin\main.js:2:25725
+    at new Promise (<anonymous>)
+    at t.<anonymous> (C:\Users\gian.pasqualini\AppData\Roaming\npm\node_modules\@seniorsistemas\frontend-generator\bin\main.js:2:25523)
+    at t.e (C:\Users\gian.pasqualini\AppData\Roaming\npm\node_modules\@seniorsistemas\frontend-generator\bin\main.js:2:27138)
+2017-12-05T17:17:35.587Z - ERROR: Generation error! :(
+
+2017-12-05T17:19:58.017Z - WARNING: No previously generated project detected.
+2017-12-05T17:19:58.065Z - DEBUG: Loading possible input files at "C:\Users\gian.pasqualini\ecossistema\workspace\ecossistema-reference-app-frontend"
+2017-12-05T17:19:59.420Z - VERBOSE: Loading input file...
+2017-12-05T17:19:59.422Z - VERBOSE: Parsing input file...
+2017-12-05T17:19:59.426Z - VERBOSE: Generating project data...
+2017-12-05T17:19:59.432Z - VERBOSE: Writing generation data...
+2017-12-05T17:19:59.433Z - DEBUG: Writing generation data file at "C:\Users\gian.pasqualini\ecossistema\workspace\ecossistema-reference-app-frontend\frontend-generator.json"
+2017-12-05T17:19:59.755Z - DEBUG: Extracting translation keys from C:\Users\gian.pasqualini\ecossistema\workspace\ecossistema-reference-app-frontend\src to C:\Users\gian.pasqualini\ecossistema\workspace\ecossistema-reference-app-frontend\src\locales\fallback.json
+2017-12-05T17:20:04.868Z - DEBUG: Reading translation file at C:\Users\gian.pasqualini\ecossistema\workspace\ecossistema-reference-app-frontend\src\locales\fallback.json
+2017-12-05T17:20:04.869Z - DEBUG: Rewriting tranlsation file at C:\Users\gian.pasqualini\ecossistema\workspace\ecossistema-reference-app-frontend\src\locales\fallback.json with nulls instead of empty strings
+2017-12-05T17:20:04.870Z - VERBOSE: Generated 38 files. Ignored 0 files.
+2017-12-05T17:20:04.871Z - SUCCESS: Successfully generated! :)
+

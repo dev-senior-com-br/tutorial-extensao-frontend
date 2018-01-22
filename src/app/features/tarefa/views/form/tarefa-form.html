@@ -1,0 +1,41 @@
+<p-confirmDialog></p-confirmDialog>
+
+<p-panel>
+    <p-header>
+        {{"ecossistema.reference_app.tarefa_form_view_label" | translate}}
+    </p-header>
+
+    <form [formGroup]="formGroup" (ngSubmit)="save()" novalidate>
+
+        <div class="ui-fluid">
+            <div class="ui-g">
+                <div class="ui-g-12 ui-md-6 form-group" [ngClass]="{'required': true}">
+                    <label>{{"ecossistema.reference_app.tarefa_id_label" | translate}}</label>
+                    <input type="number" id="id" name="id" pInputText formControlName="id" autocomplete="off" />
+                </div>
+                <div class="ui-g-12 ui-md-6 form-group" [ngClass]="{'required': true}">
+                    <label>{{"ecossistema.reference_app.tarefa_titulo_label" | translate}}</label>
+                    <input type="text" id="titulo" name="titulo" pInputText formControlName="titulo" autocomplete="off" />
+                </div>
+                <div class="ui-g-12 ui-md-6 form-group" [ngClass]="{'required': true}">
+                    <label>{{"ecossistema.reference_app.tarefa_data_label" | translate}}</label>
+                    <p-calendar id="data" name="data" [showIcon]="true" [showTime]="true" formControlName="data"></p-calendar>
+                </div>
+                <div class="ui-g-12 ui-md-6 form-group" [ngClass]="{'required': true}">
+                    <label>{{"ecossistema.reference_app.tarefa_description_label" | translate}}</label>
+                    <input type="text" id="description" name="description" pInputText formControlName="description" autocomplete="off" />
+                </div>
+            </div>
+        </div>
+
+        <div class="ui-g">
+            <div class="ui-g-12">
+                <button id="save" type="submit" pButton label="{{'save' | translate}}" [disabled]="!formGroup.valid" *ngIf="isNew || permissions.editar"></button>
+                <button id="delete" type="button" class="ui-button-secondary" pButton label="{{'delete' | translate}}" (click)="delete()" *ngIf="!isNew && permissions.excluir && !loading"></button>
+                <button id="cancel" type="button" class="ui-button-link" pButton label="{{'cancel' | translate}}" (click)="cancel()"></button>
+            </div>
+        </div>
+    </form>
+
+
+</p-panel>

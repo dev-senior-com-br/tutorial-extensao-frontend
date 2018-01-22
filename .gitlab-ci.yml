@@ -1,0 +1,62 @@
+stages:
+    - prepare
+    - test
+    - deploy
+
+cache:
+  key: "$CI_BUILD_REF"
+  untracked: true
+  paths:
+    - node_modules/
+    - dist/
+
+variables:
+  BUCKET_NAME: "br-com-senior-platform-frontend-updater-default-origin"
+  CANNED_ACL: "authenticated-read"
+
+.publish-s3: &publish_s3
+  script:
+    - npm --version
+    - npm run build
+    - get_attribute() { cat package.json | grep $1 | head -1 | cut -d ":" -f 2 | sed "s/[{, }, \", ',[:space:]]//g"; };
+    - appname=$(get_attribute "app\":")
+    - domain=$(get_attribute "domain\":")
+    - service=$(get_attribute "service\":")
+    - echo "console.log(JSON.stringify(require('./package.json').project, null, 2))" | node | sed "s,^{,{\n  \"version\":\"$version\"\,," > dist/frontend-info.json
+    - echo -e "\e[92mLiberando a versão $version em Amazon S3 $BUCKET_NAME/$appname/$domain/$service/$version/"
+    - tar -zcf frontend.tar.gz -C dist .
+    - mv frontend.tar.gz ./dist/
+    - aws s3 cp dist s3://$BUCKET_NAME/$appname/$domain/$service/$version/ --recursive --acl $CANNED_ACL
+    - echo -e "\e[39m\nFeito!\n"
+
+prepare:
+  stage: prepare
+  script:
+    - npm --version
+    - npm install
+
+test:
+  stage: test
+  script:
+    - npm test
+
+release-snapshot:
+  <<: *publish_s3
+  when: manual
+  stage: deploy
+  before_script:
+    - version=${CI_COMMIT_REF_SLUG}-SNAPSHOT
+
+release-tag:
+  <<: *publish_s3
+  stage: deploy
+  before_script:
+    - version=$(git describe --exact-match --tags | sed "s/-\([[:digit:]]\)/\.\1/g")
+    - if [ -z "${version}" ]; then version=$(cat package.json | grep version | head -1 | cut -d ":" -f 2 | sed 's/[",[:space:]]//g'); fi
+  artifacts:
+    paths:
+      - dist/
+    name: "$CI_BUILD_REPO-$CI_BUILD_TAG"
+    expire_in: 4 weeks
+  only:
+    - tags
