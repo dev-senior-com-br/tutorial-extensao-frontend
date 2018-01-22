@@ -1,15 +1,29 @@
 {
-    "menu": {
-            "children": [
-                {
-                    "label": "Aplicativo de referência",
-                    "labelI18n": "platform.backend.ecossistema_reference_app",
-                    "path": {
-                        "category": "iframe",
-                        "menuId": "{reference-app-frontend.url}/reference_app/#/"
-                    }
-                }
-            ]
-        
-    }
+	"url": "https://d3tfg7xzbvvd1u.cloudfront.net/",
+	"landpage":"#/",
+	"iframes": {
+		"items": [
+			{
+				"id": "custom_reference_app"
+			}
+		]
+	},
+	"menu": {
+		"children": [{
+			"label": "Reference App Custom",
+			"children": [{
+				"label": "Tarefas Custom",
+				"children": [
+					{
+						"label": "home",
+						"path": {
+							"withCredentials": true,
+							"category": "iframe",
+							"menuId": "https://d3tfg7xzbvvd1u.cloudfront.net/"
+						}
+					}
+				]				
+			}]
+		}]
+	}
 }
